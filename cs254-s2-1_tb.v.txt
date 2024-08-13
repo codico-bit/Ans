@@ -1,0 +1,23 @@
+module testGate;
+    
+    reg A, B, C;
+    wire original, simple;
+    original testO(A, B, C, original);
+    simplified testS(A, B, C, simple);
+    initial begin 
+        for(integer i = 0; i<8; i = i + 1) begin 
+            {A, B, C} = i;
+            #10;
+        end
+       $finish;
+
+    end
+
+    initial begin
+        $dumpfile("simpleOriginal.vcd");
+        $dumpvars(0, testGate);
+        $display(" Time A B C original simplified");
+        $monitor("%4d  %b %b %b    %b         %b", $time, A, B, C, original, simple);
+        
+    end
+endmodule
