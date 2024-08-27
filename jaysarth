@@ -1,0 +1,132 @@
+module BCDtoExcess3(input [3:0] BCD, output [3:0] Excess3one, output [3:0] Excess3two);
+  wire Y3, Y2, Y1, Y0;
+
+
+  assign Y3 = (BCD[3] & ~BCD[2] & ~BCD[1]) | (~BCD[3] & BCD[2] & BCD[1]) | (~BCD[3] & BCD[2] & BCD[0]);
+  assign Y2 = (~BCD[2] & ~BCD[1] & BCD[0]) | (~BCD[3] & BCD[2] & ~BCD[1] & ~BCD[0]) | (~BCD[3] & ~BCD[2] & BCD[1]);
+  assign Y1 = (~BCD[3] & ~BCD[1] & ~BCD[0]) | (~BCD[2] & ~BCD[1] & ~BCD[0]) | (~BCD[3] & BCD[1] & BCD[0]);
+  assign Y0 = ~BCD[0];
+
+  assign Excess3one = {Y3, Y2, Y1, Y0};
+    assign Excess3two = BCD + 4'b0011;
+endmodule
+module BCDtoExcess3_tb;
+
+// Declare variables for inputs and outputs
+reg [3:0] BCD;
+wire [3:0] Excess3one;
+wire [3:0] Excess3two;
+
+// Instantiate the BCD to Excess-3 Converter module
+BCDtoExcess3 uut (
+    .BCD(BCD),
+    .Excess3one(Excess3one),
+    .Excess3two(Excess3two)
+
+);
+
+initial begin
+    // Apply each BCD value from 0 to 9
+    BCD = 4'b0000; #10; // BCD 0 => Excess-3 0011
+    BCD = 4'b0001; #10; // BCD 1 => Excess-3 0100
+    BCD = 4'b0010; #10; // BCD 2 => Excess-3 0101
+    BCD = 4'b0011; #10; // BCD 3 => Excess-3 0110
+    BCD = 4'b0100; #10; // BCD 4 => Excess-3 0111
+    BCD = 4'b0101; #10; // BCD 5 => Excess-3 1000
+    BCD = 4'b0110; #10; // BCD 6 => Excess-3 1001
+    BCD = 4'b0111; #10; // BCD 7 => Excess-3 1010
+    BCD = 4'b1000; #10; // BCD 8 => Excess-3 1011
+    BCD = 4'b1001; #10; // BCD 9 => Excess-3 1100
+
+    // Apply "don't care" inputs (1010 to 1111)
+    // Outputs are not checked since they are "don't care"
+    // BCD = 4'b1010; #10; // Don't care
+    // BCD = 4'b1011; #10; // Don't care
+    // BCD = 4'b1100; #10; // Don't care
+    // BCD = 4'b1101; #10; // Don't care
+    // BCD = 4'b1110; #10; // Don't care
+    // BCD = 4'b1111; #10; // Don't care
+
+    // End the simulation
+    $finish;
+end
+
+initial begin
+    // Monitor the outputs for debugging
+    $monitor("Time = %0t | BCD = %b | Excess-3one = %b | Excess-3two = %b", $time, BCD,Excess3one,Excess3two);
+   
+ 
+    $dumpfile("BCDtoExcess3_tb.vcd");
+    $dumpvars(0, BCDtoExcess3_tb);
+end
+
+endmodule
+
+JAYS CODE ^^
+[27/08, 12:32] Sarth NITK: module file (  
+input a,b,c,d,
+output w,x,y,z,w1,x1,y1,z1);
+
+wire l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12;
+
+and(l1,b,c);
+and(l2,b,d);
+or(w,a,l1,l2);
+
+not(l3,b);
+not(l4,c);
+not(l5,d);
+and(l6,l3,c);
+and(l7,l3,d);
+and(l8,b,l4,l5);
+or(x,l6,l7,l8);
+
+and(l9,c,d);
+and(l10,l4,l5);
+or(y,l9,l10);
+
+or(z,l5,0);
+
+assign  w1=a | (b & c) | (b & d) ;
+assign x1= ((~b) & c ) | ((~b) & d ) | (b & (~c) & (~d) );
+assign y1= (c & d) | ( (~c) & (~d) );
+assign z1= (~d);
+
+endmodule
+
+module final_tb;
+
+reg a,b,c,d;
+wire w,x,y,z,w1,x1,y1,z1;
+
+file test(a,b,c,d,w,x,y,z,w1,x1,y1,z1);
+
+initial begin
+          for(integer i=0; i<16;i++) begin
+          if(i<10) begin {a,b,c,d}=i; end
+          if (i>9) begin {a,b,c,d}=i;  $monitor("time= %0t, BCD = %b%b%b%b, EXCESS 3_1 = XXXX , EXCESS 3_2 = XXXX",$time,a,b,c,d ); end
+          #10;
+          end
+         
+          $finish;
+         
+end
+
+initial begin
+ $monitor("time= %0t, BCD = %b%b%b%b, EXCESS 3_1 = %b%b%b%b, EXCESS 3_2 = %b%b%b%b",$time,a,b,c,d,w,x,y,z,w1,x1,y1,z1);
+
+
+end
+// initial begin
+//          for(integer i=10;i<16;i++) begin
+//          {a,b,c,d}=i;
+//          #10;
+//          end
+//          $finish;
+// end
+
+// initial begin
+//  $monitor("time= %0t, BCD = %b%b%b%b, EXCESS 3_1 = X, EXCESS 3_2 = X",$time,a,b,c,d);
+ 
+ 
+endmodule
