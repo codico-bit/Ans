@@ -1,26 +1,69 @@
-// CS158-S1-2.v
-
-// Gate-Level Modeling
-module converter_gate_level(
-    input [3:0] in,
-    output [3:0] out
+module CS158_S1_2(
+    a,b,c,d,w,x,y,z,p,q,r,s
 );
-    // Assuming the conversion logic is straightforward
-    // For example, let's assume the conversion is a simple mapping
-    // This is a placeholder logic, replace with actual conversion logic
-    assign out[3] = in[3];
-    assign out[2] = in[2];
-    assign out[1] = in[1];
-    assign out[0] = in[0];
+    input a,b,c,d ;
+    output w,x,y,z;
+    output p,q,r,s;
+    wire na,nb,nc,nd;
+    wire w1, w2, w3, w4, w5, w6, w7, w8, w9, w10, w11, w12;
+    wire f,g;
+
+/*
+    not (na, a);
+    not (nb, b);
+    not (nc, c);
+    not (nd, d);
+
+    // q
+    and (w1, a, nb);
+    and (w2, na, b, c);
+    or (w3, w1, w2);
+
+    // r
+    and (w4,na,b);
+    and (w5, b, nc);
+    and (w6, a, nb, nc);
+    or (w7, w4, w5, w6);
+
+    // s
+*/
+    // Data Flow
+    assign w = a&b&d;
+    assign x = (a&~b&d) | (a&~b&c) | (~a&b&c&~d);
+    assign y = (~a&b&~c) | (a&~b&c);
+    assign z = (~a&b&~c&~d) | (~a&~b&c&~d) | (a&b&c&d) | (a&~b&~c&d) | (a&~b&c&~d);
+
+    assign p = a&b&d;
+    assign q = (a&~b&d) | (a&~b&c) | (~a&b&c&~d);
+    assign r = (~a&b&~c) | (a&~b&c);
+    assign s = (~a&b&~c&~d) | (~a&~b&c&~d) | (a&b&c&d) | (a&~b&~c&d) | (a&~b&c&~d);
 endmodule
 
-// Dataflow Modeling
-module converter_dataflow(
-    input [3:0] in,
-    output [3:0] out
-);
-    // Assuming the conversion logic is straightforward
-    // For example, let's assume the conversion is a simple mapping
-    // This is a placeholder logic, replace with actual conversion logic
-    assign out = in;
-endmodule
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
+    assign w = a;
+    assign x = (a&~b) | (~a & b & c);
+    assign y = (~a&b) | (b&~c) | (a&~b&~c);
+    assign z = ~d;
+    */
+    
+
+
+    

@@ -1,0 +1,244 @@
+$date
+	Tue Aug 27 17:36:04 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module CS158_S2_1_tb $end
+$var wire 1 ! valid_gate $end
+$var wire 1 " valid_beh $end
+$var reg 1 # A $end
+$var reg 1 $ B $end
+$var reg 1 % C $end
+$var reg 1 & D $end
+$var reg 1 ' E $end
+$scope module test $end
+$var wire 1 # A $end
+$var wire 1 $ B $end
+$var wire 1 % C $end
+$var wire 1 & D $end
+$var wire 1 ' E $end
+$var wire 1 ( cond1 $end
+$var wire 1 ) cond2 $end
+$var wire 1 * cond3 $end
+$var wire 1 + cond4 $end
+$var wire 1 , cond5 $end
+$var wire 1 ! valid_gate $end
+$var reg 1 " valid_beh $end
+$upscope $end
+$scope begin $ivl_for_loop0 $end
+$var integer 32 - i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1 -
+1,
+1+
+0*
+0)
+0(
+0'
+0&
+0%
+0$
+0#
+0"
+0!
+$end
+#10
+1)
+b10 -
+1'
+#20
+0+
+0)
+b11 -
+1&
+0'
+#30
+1)
+1+
+b100 -
+1'
+#40
+1+
+b101 -
+1%
+0&
+0'
+#50
+0)
+b110 -
+1'
+#60
+1)
+0+
+b111 -
+1&
+0'
+#70
+0)
+1+
+b1000 -
+1'
+#80
+0,
+1(
+1+
+b1001 -
+1$
+0%
+0&
+0'
+#90
+1)
+b1010 -
+1'
+#100
+0+
+0)
+b1011 -
+1&
+0'
+#110
+1)
+1+
+b1100 -
+1'
+#120
+1+
+b1101 -
+1%
+0&
+0'
+#130
+0)
+b1110 -
+1'
+#140
+1)
+0+
+b1111 -
+1&
+0'
+#150
+0)
+1+
+b10000 -
+1'
+#160
+1,
+1+
+b10001 -
+1#
+0$
+0%
+0&
+0'
+#170
+1)
+b10010 -
+1'
+#180
+0+
+0)
+b10011 -
+1&
+0'
+#190
+1)
+1+
+b10100 -
+1'
+#200
+1!
+1*
+1+
+1"
+b10101 -
+1%
+0&
+0'
+#210
+0!
+0)
+0"
+b10110 -
+1'
+#220
+1)
+0+
+b10111 -
+1&
+0'
+#230
+0)
+0!
+1+
+b11000 -
+1'
+#240
+0,
+0*
+1+
+b11001 -
+1$
+0%
+0&
+0'
+#250
+1)
+b11010 -
+1'
+#260
+0+
+1,
+0)
+b11011 -
+1&
+0'
+#270
+1)
+1+
+b11100 -
+1'
+#280
+0,
+1*
+1+
+b11101 -
+1%
+0&
+0'
+#290
+0)
+b11110 -
+1'
+#300
+1)
+0+
+1,
+b11111 -
+1&
+0'
+#310
+0)
+0!
+1+
+b100000 -
+1'
+#320
+0(
+0*
+1+
+b100001 -
+0#
+0$
+0%
+0&
+0'

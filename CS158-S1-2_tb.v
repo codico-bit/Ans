@@ -1,43 +1,25 @@
-// Testbench for the Converter
-module testbench;
-    reg [3:0] in;
-    wire [3:0] out_gate, out_dataflow;
-
-    // Instantiate the gate-level model
-    converter_gate_level uut_gate (
-        .in(in),
-        .out(out_gate)
-    );
-
-    // Instantiate the dataflow model
-    converter_dataflow uut_dataflow (
-        .in(in),
-        .out(out_dataflow)
-    );
+module CS158_S1_2_tb;
+    reg a,b,c,d;
+    wire p,q,r,s,w,x,y,z;
+    CS158_S1_2 test(a,b,c,d,w,x,y,z,p,q,r,s);
 
     initial begin
-        // Monitor the signals
-        $monitor("Time = %0d, in = %b, out_gate = %b, out_dataflow = %b", $time, in, out_gate, out_dataflow);
-
-        // Test cases
-        in = 4'b0000; #10;
-        in = 4'b0001; #10;
-        in = 4'b0010; #10;
-        in = 4'b0011; #10;
-        in = 4'b0100; #10;
-        in = 4'b0101; #10;
-        in = 4'b0110; #10;
-        in = 4'b0111; #10;
-        in = 4'b1000; #10;
-        in = 4'b1001; #10;
-        in = 4'b1010; #10;
-        in = 4'b1011; #10;
-        in = 4'b1100; #10;
-        in = 4'b1101; #10;
-        in = 4'b1110; #10;
-        in = 4'b1111; #10;
-
-        // End simulation
+        {a,b,c,d} = 0;
+        for(integer i = 1; i < 10; i++)
+            begin
+                #10 {a,b,c,d} = i;
+            end;
         $finish;
+    end
+
+
+    initial begin
+        $dumpfile("CS158_S1_2.vcd");
+        $dumpvars(0,CS158_S1_2_tb);
+        $display("---------------------------CS158 S1-2---------------------------");
+        $display("-----------------6 3 1 -1 to 8 4 2 1 converter -----------------");
+        $display("| Time | 6 3 1 -1 | dataflow 6 3 2 11 | gateflow 8 4 2 1");
+        $monitor("| %4d | %1b %1b %1b %1b | %10b %1b %1b %1b | %10b %1b %1b %1b |", $time,a,b,c,d,w,x,y,z,p,q,r,s);
+        $display("----------------------------------------------------------------");
     end
 endmodule
