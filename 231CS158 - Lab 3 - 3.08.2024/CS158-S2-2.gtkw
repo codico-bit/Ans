@@ -1,0 +1,28 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Tue Aug 13 11:07:17 2024
+[*]
+[dumpfile] "/home/student/Desktop/231CS158/CS158_S2_2.vcd"
+[dumpfile_mtime] "Tue Aug 13 10:41:52 2024"
+[dumpfile_size] 1291
+[savefile] "/home/student/Desktop/231CS158/CS158-S1-1.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-4.670823 4 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 233
+[signals_width] 230
+[sst_expanded] 1
+[sst_vpaned_height] 144
+@28
+CS158_S2_2_tb.X
+CS158_S2_2_tb.Y
+CS158_S2_2_tb.Z
+CS158_S2_2_tb.F2_original_structure
+CS158_S2_2_tb.F2_simplified_structure
+CS158_S2_2_tb.F2_original_dataflow
+CS158_S2_2_tb.F2_simplified_dataflow
+CS158_S2_2_tb.F2_original_behavioural
+CS158_S2_2_tb.F2_simplified_behavioural
+[pattern_trace] 1
+[pattern_trace] 0

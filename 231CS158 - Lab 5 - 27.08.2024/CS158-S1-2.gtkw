@@ -1,0 +1,33 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Tue Aug 27 14:14:48 2024
+[*]
+[dumpfile] "C:\Users\swara\OneDrive\Desktop\Third Sem\DDS Lab\231CS158-27.08.2024 - Lab 5\CS158_S1_2.vcd"
+[dumpfile_mtime] "Tue Aug 27 12:53:36 2024"
+[dumpfile_size] 1045
+[savefile] "C:\Users\swara\OneDrive\Desktop\Third Sem\DDS Lab\231CS158-27.08.2024 - Lab 5\CS158-S1-2.gtkw"
+[timestart] 0
+[size] 1536 801
+[pos] -113 -113
+*-4.757188 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] CS158_S1_2_tb.
+[sst_width] 197
+[signals_width] 78
+[sst_expanded] 1
+[sst_vpaned_height] 224
+@28
+CS158_S1_2_tb.a
+CS158_S1_2_tb.b
+CS158_S1_2_tb.c
+CS158_S1_2_tb.d
+CS158_S1_2_tb.p
+CS158_S1_2_tb.q
+CS158_S1_2_tb.r
+CS158_S1_2_tb.s
+CS158_S1_2_tb.w
+CS158_S1_2_tb.x
+CS158_S1_2_tb.y
+@29
+CS158_S1_2_tb.z
+[pattern_trace] 1
+[pattern_trace] 0
